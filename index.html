@@ -17,8 +17,8 @@
   <!-- MOBILE NAV OVERLAY -->
   <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-header">
-      <span class="nav-logo">TDK</span>
-      <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+      <a href="#home" onclick="closeMobileNav()" class="nav-logo">TDK</a>
+      <button class="mobile-nav-close" onclick="toggleMobileNav()">✕</button>
     </div>
     <div class="mobile-nav-links">
       <a href="#home" onclick="closeMobileNav()" class="nav-link" data-section="home">Home</a>
@@ -27,7 +27,6 @@
       <a href="#research" onclick="closeMobileNav()" class="nav-link" data-section="research">Education</a>
       <a href="#projects" onclick="closeMobileNav()" class="nav-link" data-section="projects">Projects</a>
       <a href="#contact" onclick="closeMobileNav()" class="nav-link" data-section="contact">Contact</a>
-      <a href="resume.pdf" download class="dl-cv">Download CV</a>
     </div>
   </div>
 
@@ -44,7 +43,7 @@
     </div>
     <div class="nav-right">
       <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle theme">☀️</button>
-      <button class="hamburger" onclick="openMobileNav()" aria-label="Menu">
+      <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -637,6 +636,7 @@
     // ── NAV ──
     function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow = 'hidden'; }
     function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow = ''; }
+    function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('open'); document.body.classList.toggle('nav-open'); }
 
     // ── ACTIVE NAV LINK ──
     const navLinks = document.querySelectorAll('.nav-link');
