@@ -112,6 +112,10 @@ nav {
   color: var(--text)
 }
 
+.nav-links a.active {
+  color: var(--accent)
+}
+
 .nav-cv-btn {
   background: var(--accent);
   color: #fff !important;
