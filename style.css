@@ -94,6 +94,46 @@ nav {
   gap: .75rem
 }
 
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 1.5rem
+}
+
+.nav-links a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 500;
+  transition: color .2s
+}
+
+.nav-links a:hover {
+  color: var(--text)
+}
+
+.nav-cv-btn {
+  background: var(--accent);
+  color: #fff !important;
+  padding: .5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600 !important;
+  transition: opacity .2s
+}
+
+.nav-cv-btn:hover {
+  opacity: .85
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex
+  }
+  .hamburger {
+    display: none
+  }
+}
+
 .theme-btn {
   background: none;
   border: none;
