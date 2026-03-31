@@ -724,80 +724,185 @@ section {
   color: var(--text2)
 }
 
-/* ── RESEARCH ── */
+/* ── RESEARCH / EDUCATION ── */
 #research {
   background: var(--bg)
 }
 
-.research-card {
+.edu-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.edu-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--border));
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .edu-timeline::before {
+    left: 24px;
+  }
+}
+
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
   background: var(--bg3);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.5rem;
-  max-width: 780px;
-  margin: 0 auto 1.5rem
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  position: relative;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.research-card h3 {
-  font-size: 1.05rem;
+.edu-item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .edu-item {
+    flex-direction: column;
+    padding-left: 3.5rem;
+    gap: 1rem;
+  }
+
+  .edu-item::before {
+    left: 24px;
+    top: 1.5rem;
+    transform: translateX(-50%);
+  }
+}
+
+.edu-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.edu-content {
+  flex: 1;
+}
+
+.edu-highlight {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.edu-highlight.achievement {
+  background: linear-gradient(135deg, #f0a500, #f59e0b);
+}
+
+.edu-content h3 {
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  line-height: 1.5
+  color: var(--text);
+  margin-bottom: 0.35rem;
 }
 
-.research-authors {
-  margin-bottom: .75rem
-}
-
-.research-authors h4 {
-  font-size: .8rem;
+.edu-content h4 {
+  font-size: 0.85rem;
   color: var(--text2);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  margin-bottom: .3rem
+  font-weight: 500;
+  margin-bottom: 0.75rem;
 }
 
-.research-authors p {
-  font-size: .85rem;
-  color: var(--text2)
-}
-
-.research-abstract h4 {
-  font-size: .8rem;
+.edu-content p {
+  font-size: 0.88rem;
   color: var(--text2);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  margin-bottom: .3rem
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
 }
 
-.research-abstract p {
-  font-size: .85rem;
-  color: var(--text2);
-  line-height: 1.7
-}
-
-.research-keywords {
-  margin: .75rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem
-}
-
-.kw-tag {
+.edu-score {
+  display: inline-block;
   background: var(--bg4);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: .2rem .55rem;
-  font-size: .75rem;
-  color: var(--text2)
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--text2);
 }
 
-.research-meta {
-  font-size: .8rem;
+.edu-score strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.edu-year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg4);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  min-width: 90px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.3;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.edu-year-sub {
+  font-size: 0.9rem;
+  font-weight: 400;
   color: var(--text2);
-  margin: .75rem 0
+  margin-top: 0.25rem;
+}
+
+.edu-year span {
+  display: block;
+}
+
+.edu-achievement .edu-year {
+  background: linear-gradient(135deg, rgba(240, 165, 0, 0.1), rgba(245, 158, 11, 0.1));
+  border-color: rgba(240, 165, 0, 0.3);
+  color: #f0a500;
+}
+
+.research-cta {
+  text-align: center;
+  margin-top: 3rem
+}
+
+.research-cta p {
+  color: var(--text2);
+  font-size: .9rem;
+  margin-bottom: 1rem
 }
 
 .btn-pub {
@@ -818,17 +923,6 @@ section {
 
 .btn-pub:hover {
   opacity: .8
-}
-
-.research-cta {
-  text-align: center;
-  margin-top: 2rem
-}
-
-.research-cta p {
-  color: var(--text2);
-  font-size: .9rem;
-  margin-bottom: 1rem
 }
 
 /* ── PROJECTS ── */
